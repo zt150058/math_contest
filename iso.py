@@ -1,7 +1,7 @@
 import pandas as pd
 
-medal_counts = pd.read_csv('summerOly_medal_counts.csv', encoding='latin1')
-iso_df=pd.read_excel('ISO.xlsx')#以上两个换成本地地址
+medal_counts = pd.read_csv('F:/美赛/2025_MCM-ICM_Problems/2025_MCM-ICM_Problems/2025_Problem_C_Data/2025_Problem_C_Data/summerOly_medal_counts.csv', encoding='latin1')
+iso_df=pd.read_excel('F:/美赛/2025_MCM-ICM_Problems/2025_MCM-ICM_Problems/2025_Problem_C_Data/2025_Problem_C_Data/ISO.xlsx"')#以上两个换成本地地址
 
 medal_counts['NOC'] = medal_counts['NOC'].str.strip().str.upper()
 iso_df['country'] = iso_df['country'].str.strip().str.upper()
@@ -22,7 +22,7 @@ merge_df['NOC']=merge_df['NOC'].fillna('Unknown')
 # 删除 'NOC' 列中值为 'Unknown' 的行
 merge_df = merge_df[merge_df['NOC'] != 'Unknown']
 
-# 保存合并后的文件
-merge_df.to_csv('merged_medal_counts.csv', index=False, encoding='utf-8')#换成希望保留的本地位置
+# 保存合并后的文件summerOly_medal_counts_replaced.csv,换成你的本地地址
+merge_df.to_csv('F:/美赛/2025_MCM-ICM_Problems/2025_MCM-ICM_Problems/2025_Problem_C_Data/2025_Problem_C_Data/processed/summerOly_medal_counts_replaced.csv', index=False, encoding='utf-8')
 
 print(merge_df.head())
