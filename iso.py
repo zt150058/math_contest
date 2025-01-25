@@ -19,4 +19,10 @@ merge_df=merge_df.drop(columns=['NOC_x','NOC_y','country'],errors='ignore')
 
 merge_df['NOC']=merge_df['NOC'].fillna('Unknown')
 
+# 删除 'NOC' 列中值为 'Unknown' 的行
+merge_df = merge_df[merge_df['NOC'] != 'Unknown']
+
+# 保存合并后的文件
+merge_df.to_csv('merged_medal_counts.csv', index=False, encoding='utf-8')
+
 print(merge_df.head())
