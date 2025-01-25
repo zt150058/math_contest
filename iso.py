@@ -23,6 +23,6 @@ merge_df['NOC']=merge_df['NOC'].fillna('Unknown')
 merge_df = merge_df[merge_df['NOC'] != 'Unknown']
 
 # 保存合并后的文件
-merge_df.to_csv('merged_medal_counts.csv', index=False, encoding='utf-8')
+merge_df.to_csv('merged_medal_counts.csv', index=False, encoding='utf-8')#换成希望保留的本地位置
 
 print(merge_df.head())
