@@ -1,7 +1,7 @@
 import pandas as pd
 
 medal_counts = pd.read_csv('summerOly_medal_counts.csv', encoding='latin1')
-iso_df=pd.read_excel('ISO.xlsx')
+iso_df=pd.read_excel('ISO.xlsx')//以上两个换成本地地址
 
 medal_counts['NOC'] = medal_counts['NOC'].str.strip().str.upper()
 iso_df['country'] = iso_df['country'].str.strip().str.upper()
